@@ -10,16 +10,9 @@ const ListHeader = ({ listName, getData }) => {
   const [cookies, setCookie, removeCookie] = useCookies(null);
   const router = useRouter();
 
-
-  const signOut = async () => {
-    await removeCookiesAndSignOut(cookies);
-  };
-
-  const removeCookiesAndSignOut = async (cookies) => {
-    if(cookies.email || cookies.token){
-      removeCookie("Email");
-      removeCookie("AuthToken");
-    }
+  const signOut = () => {
+    removeCookie("Email");
+    removeCookie("AuthToken");
   };
 
   return (
@@ -27,12 +20,11 @@ const ListHeader = ({ listName, getData }) => {
       <h1>{listName}</h1>
 
       <div className="btn-container">
-
         <button className="create" onClick={() => setShowModal(true)}>
           ADD NEW
         </button>
 
-        <button className="signout" onClick={() =>  signOut()}>
+        <button className="signout" onClick={() => signOut()}>
           Sign Out
         </button>
       </div>
