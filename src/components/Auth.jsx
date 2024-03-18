@@ -64,7 +64,9 @@ const Auth = () => {
 
   const pushPath = async (obj) => {
     if(obj.token.length && obj.email.length){
-      router.push(`${process.env.NEXT_PUBLIC_PAGE_URL}/todos/${cookies.email}`)
+      // router.push(`${process.env.NEXT_PUBLIC_PAGE_URL}/todos/${cookies.email}`)
+      router.push(`todos/${cookies.email}`)
+
     }
     else{
       router.push(`${process.env.NEXT_PUBLIC_PAGE_URL}`)
