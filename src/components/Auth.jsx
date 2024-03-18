@@ -38,6 +38,7 @@ const Auth = () => {
       return
     }
     try {
+      console.log(data)
       await navigationAndCookiesLoader(data)
     } catch (error) {
       console.error('Error setting cookies:', error);
@@ -47,10 +48,10 @@ const Auth = () => {
 
 //make a function which takes the cookies and check if they're already setted up
   const navigationAndCookiesLoader = async (cookies) =>{
-      if(cookies && cookies.Email && cookies.AuthToken){
-        setCookie("Email", cookies.Email);
-        setCookie("AuthToken", cookies.AuthToken);
-        await pushPath()
+      if(cookies && cookies.email && cookies.token){
+        setCookie("Email", cookies.email);
+        setCookie("AuthToken", cookies.token);
+        await pushPath(cookies)
         
         // if(cookies.token.length && cookies.email.length){
         //   router.push(`${process.env.NEXT_PUBLIC_PAGE_URL}/todos/${cookies.email}`)
@@ -62,7 +63,7 @@ const Auth = () => {
   };
 
   const pushPath = async (obj) => {
-    if(obj.Token.length && obj.Email.length){
+    if(obj.token.length && obj.email.length){
       router.push(`${process.env.NEXT_PUBLIC_PAGE_URL}/todos/${cookies.email}`)
     }
     else{
