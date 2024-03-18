@@ -47,9 +47,9 @@ const Auth = () => {
 
 //make a function which takes the cookies and check if they're already setted up
   const navigationAndCookiesLoader = async (cookies) =>{
-      if(cookies && cookies.email && cookies.token){
-        setCookie("Email", cookies.email);
-        setCookie("AuthToken", cookies.token);
+      if(cookies && cookies.Email && cookies.AuthToken){
+        setCookie("Email", cookies.Email);
+        setCookie("AuthToken", cookies.AuthToken);
         await pushPath()
         
         // if(cookies.token.length && cookies.email.length){
@@ -62,7 +62,7 @@ const Auth = () => {
   };
 
   const pushPath = async (obj) => {
-    if(obj.token.length && obj.email.length){
+    if(obj.Token.length && obj.Email.length){
       router.push(`${process.env.NEXT_PUBLIC_PAGE_URL}/todos/${cookies.email}`)
     }
     else{
@@ -129,3 +129,8 @@ const Auth = () => {
 };
 
 export default Auth;
+
+
+
+
+
