@@ -11,12 +11,16 @@ const ListHeader = ({ listName, getData }) => {
   const router = useRouter();
 
 
-  const signOut = () => {
-    removeCookie("Email");
-    removeCookie("AuthToken");
+  const signOut = async () => {
+    await removeCookiesAndSignOut(cookies);
   };
 
-  
+  const removeCookiesAndSignOut = async (cookies) => {
+    if(cookies.email || cookies.token){
+      removeCookie("Email");
+      removeCookie("AuthToken");
+    }
+  };
 
   return (
     <div className="list-header">
@@ -28,7 +32,7 @@ const ListHeader = ({ listName, getData }) => {
           ADD NEW
         </button>
 
-        <button className="signout" onClick={() => signOut()}>
+        <button className="signout" onClick={() =>  signOut()}>
           Sign Out
         </button>
       </div>
