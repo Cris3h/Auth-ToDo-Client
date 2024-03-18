@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useCookies } from "react-cookie";
-import { useRouter } from "next/navigation";
 import Modal from "./Modal";
 
 import "../app/globals.css";
@@ -8,11 +7,11 @@ import "../app/globals.css";
 const ListHeader = ({ listName, getData }) => {
   const [showModal, setShowModal] = useState(false);
   const [cookies, setCookie, removeCookie] = useCookies(null);
-  const router = useRouter();
+
 
   const signOut = () => {
-    removeCookie("Email");
-    removeCookie("AuthToken");
+    removeCookie("Email", {path: '/'});
+    removeCookie("AuthToken", {path: '/'});
   };
 
   return (
