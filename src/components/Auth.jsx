@@ -50,12 +50,25 @@ const Auth = () => {
       if(cookies && cookies.email && cookies.token){
         setCookie("Email", cookies.email);
         setCookie("AuthToken", cookies.token);
-        router.push(`${process.env.NEXT_PUBLIC_PAGE_URL}/todos/${cookies.email}`)
+        await pushPath()
+        
+        // if(cookies.token.length && cookies.email.length){
+        //   router.push(`${process.env.NEXT_PUBLIC_PAGE_URL}/todos/${cookies.email}`)
+        // }
       }
       else{
         setError("There was a problem! be patience, we're working for you (:")
       }
   };
+
+  const pushPath = async (obj) => {
+    if(obj.token.length && obj.email.length){
+      router.push(`${process.env.NEXT_PUBLIC_PAGE_URL}/todos/${cookies.email}`)
+    }
+    else{
+      router.push(`${process.env.NEXT_PUBLIC_PAGE_URL}`)
+    }
+  }
   
   return (
     <div className="auth-container">
