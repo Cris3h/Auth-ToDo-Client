@@ -8,10 +8,9 @@ const ListHeader = ({ listName, getData }) => {
   const [showModal, setShowModal] = useState(false);
   const [cookies, setCookie, removeCookie] = useCookies(null);
 
-
   const signOut = () => {
-    removeCookie("Email", {path: '/'});
-    removeCookie("AuthToken", {path: '/'});
+    removeCookie("Email", { path: "/" });
+    removeCookie("AuthToken", { path: "/" });
   };
 
   return (

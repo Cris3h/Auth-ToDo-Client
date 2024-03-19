@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Auth To Do App
 
-## Getting Started
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Auth To Do App is a minimalist to-do list application with authentication features. Users can create, delete, and manage their tasks securely. The app provides a simple and intuitive interface to enhance productivity.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Installation
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+To run the Auth To Do App locally, follow these steps:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. Clone the repository.
+2. Navigate to the project directory.
+3. Install dependencies using the package manager of your choice:
 
-## Learn More
+4. Start the development server:
 
-To learn more about Next.js, take a look at the following resources:
+Make sure to create a database for your own use.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Usage
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+After setting up the project locally, you can interact with the Auth To Do App by accessing the following endpoints:
 
-## Deploy on Vercel
+- **GET /todos/:id**: Retrieve all to-do items.
+- **POST /todos**: Create a new to-do item.
+- **PATCH /todos/:id**: Edit an existing to-do item.
+- **DELETE /todos/:id**: Delete a to-do item.
+- **POST /login**: Login to the application.
+- **POST /signup**: Sign up for a new account.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Make sure to set up the environment variables in a .env file with your own paths.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Technologies Used
+
+- MongoDB
+- Node.js v20
+- React Cookies
+- Next.js 14
+
+## Credits
+
+A big thank you to my savior [Diego](https://github.com/Diiegote) for their invaluable contributions to the project!
+
+## Contact Information
+
+Feel free to reach out to me on [Twitter](https://twitter.com/cristreachi) if you have any questions or need support. Don't hesitate to send me a DM!
