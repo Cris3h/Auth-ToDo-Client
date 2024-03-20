@@ -27,7 +27,7 @@ const Auth = () => {
       `${process.env.NEXT_PUBLIC_SERVER_URL}/${endpoint}`,
       {
         method: "POST",
-        headers: {'Content-Type': 'application/json'},
+        headers: {'Content-Type': 'application/json', 'Authorization': ''},
         body: JSON.stringify({ email, password }),
       }
     );
