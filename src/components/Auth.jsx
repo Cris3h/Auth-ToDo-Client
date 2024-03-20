@@ -28,7 +28,6 @@ const Auth = () => {
       {
         method: "POST",
         headers: {'Content-Type': 'application/json'},
-        withCredentials: true,
         body: JSON.stringify({ email, password }),
       }
     );
